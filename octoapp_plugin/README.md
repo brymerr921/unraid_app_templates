@@ -11,3 +11,12 @@ The Unraid OctoApp docker container companion plugin supports 3D printers runnin
 
 OctoApp works with almost any 3D printer. [Check if your printer is supported here.](https://github.com/crysxd/OctoApp-Plugin/wiki)
 
+## Installation instructions
+
+1. Run the following command inside the Unraid terminal:
+```
+wget -P /boot/config/plugins/community.applications/private/bmerrill9 \
+  https://raw.githubusercontent.com/brymerr921/unraid_app_templates/main/octoapp_plugin/octoapp_plugin.xml
+```
+2. In your Unraid web interface, go to "Apps" -> "Private Apps" (on the left hand side). You'll see OctoApp-Plugin there for you to install.
+
