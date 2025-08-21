@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>OctoApp-Plugin</Name>
+  <Repository>bmerrill9/octoapp_plugin</Repository>
+  <Registry/>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/crysxd/OctoApp-Plugin/wiki/</Support>
+  <Project>https://plugins.octoprint.org/plugins/octoapp/</Project>
+  <Overview>A plugin providing extra functionality to OctoApp.&#xD;
+&#xD;
+To use this plugin:&#xD;
+1) Get the required information for your 3D printer.&#xD;
+2) Install the Docker plugin in UnRaid using the information.&#xD;
+3) View the Docker container logs to verify the connection.&#xD;
+4) Make a new Docker container plugin for all your 3D printers!&#xD;
+&#xD;
+To follow this link for a guide on how to get the required Docker variables for your 3D printer:&#xD;
+https://octoeverywhere.com/r/docker&#xD;
+&#xD;
+Features:&#xD;
+- Remote push notification for events like print completion or filament change with end-to-end encryption&#xD;
+- Remote push notifications for your print progress with end-to-end encryption&#xD;
+- More coming in the future!&#xD;
+&#xD;
+Learn more @ https://plugins.octoprint.org/plugins/octoapp/</Overview>
+  <Category>Cloud: HomeAutomation: Productivity: Tools: Network:Management Status:Stable</Category>
+  <WebUI/>
+  <TemplateURL/>
+  <Icon>https://github.com/brymerr921/unraid_app_templates/blob/main/images/OctoApp.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DonateText/>
+  <DonateLink/>
+  <Requires/>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/octoapp_plugin/config</HostDir>
+      <ContainerDir>/data</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Config Name="Type" Target="COMPANION_MODE" Default="bambu" Mode="" Description="The plugin type you're setting up. MUST BE: bambu, elegoo, or klipper" Type="Variable" Display="always" Required="true" Mask="false">elegoo</Config>
+  <Config Name="Printer IP Address" Target="PRINTER_IP" Default="" Mode="" Description="(required for all types) The IP address of your 3D printer." Type="Variable" Display="always" Required="true" Mask="false">10.0.0.25</Config>
+  <Config Name="Bambu Lab Access Code" Target="ACCESS_CODE" Default="" Mode="" Description="Only required for Bambu Lab plugins (see readme)" Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="Bambu Lab Serial Number" Target="SERIAL_NUMBER" Default="" Mode="" Description="Only required for Bambu Lab printers. (see readme)" Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="Data Path" Target="/data" Default="" Mode="rw" Description="Container Path: /data" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/octoapp_plugin/config</Config>
+  <Config Name="Moonraker API Key" Target="MOONRAKER_API_KEY" Default="" Mode="" Description="Optional For Klipper Plugins Types That Have Auth Enabled" Type="Variable" Display="advanced" Required="false" Mask="true"/>
+  <Config Name="Klipper Frontend Port" Target="WEBSERVER_PORT" Default="" Mode="" Description="Optional for Klipper-type plugins." Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="Moonraker Port" Target="MOONRAKER_PORT" Default="7125" Mode="" Description="Optional for Klipper Plugins" Type="Variable" Display="advanced" Required="false" Mask="false">7125</Config>
+</Container>
